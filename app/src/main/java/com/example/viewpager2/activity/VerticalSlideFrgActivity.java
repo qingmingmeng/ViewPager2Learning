@@ -44,7 +44,7 @@ public class VerticalSlideFrgActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 setColor(0);
-                viewPager2.setCurrentItem(0,true);
+                viewPager2.setCurrentItem(0,true);//true：有切换效果  false：无切换效果
             }
         });
         tvB = findViewById(R.id.tv_b);

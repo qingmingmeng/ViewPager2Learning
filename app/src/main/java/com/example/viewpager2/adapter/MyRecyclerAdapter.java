@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.viewpager2.R;
+import com.example.viewpager2.interfaces.OnItemClickListener;
 
 import java.util.List;
 
@@ -22,7 +23,7 @@ import androidx.recyclerview.widget.RecyclerView;
  * Passed parameters:
  * Warning:
  */
-public class MyRecyclerAdapter extends RecyclerView.Adapter {
+public class MyRecyclerAdapter extends RecyclerView.Adapter implements View.OnClickListener {
 
     private List<Integer> datas;
     private int viewId;
@@ -42,12 +43,14 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter {
         View itemView = LayoutInflater.from(context).inflate(viewId,null,false);
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         itemView.setLayoutParams(params);
+        itemView.setOnClickListener(this);
         return new MyHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         MyHolder hd = (MyHolder) holder;
+        hd.itemView.setTag(position);
         hd.imageView.setImageResource(datas.get(position));
         if (position == 0){
             hd.tvGuide.setVisibility(View.VISIBLE);
@@ -60,6 +63,13 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter {
         return datas == null ? 0 : datas.size();
     }
 
+    @Override
+    public void onClick(View v) {
+        if (null != listener) {
+            listener.onItemClick(v, (int) v.getTag());
+        }
+    }
+
     private static final class MyHolder extends RecyclerView.ViewHolder{
         private final ImageView imageView;
         private final TextView tvGuide;
@@ -68,5 +78,10 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter {
             imageView = itemView.findViewById(R.id.image_view);
             tvGuide = itemView.findViewById(R.id.tv_guide);
         }
+    }
+
+    private OnItemClickListener listener;
+    public void setOnItemClickListener(OnItemClickListener listener){
+        this.listener = listener;
     }
 }

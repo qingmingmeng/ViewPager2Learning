@@ -2,12 +2,15 @@ package com.example.viewpager2.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
 import com.example.viewpager2.adapter.MyRecyclerAdapter;
 import com.example.viewpager2.R;
+import com.example.viewpager2.interfaces.OnItemClickListener;
+import com.example.viewpager2.utils.UiUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,5 +41,11 @@ public class VerticalSlidePicActivity extends Activity {
         ViewPager2 viewPager2 = findViewById(R.id.view_pager_2);
         MyRecyclerAdapter myAdapter = new MyRecyclerAdapter(images,R.layout.item,this,alphaAnimation);
         viewPager2.setAdapter(myAdapter);
+        myAdapter.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                UiUtil.toast("第" + position + "张图片");
+            }
+        });
     }
 }
