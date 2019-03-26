@@ -15,7 +15,7 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:text="请向上滑动"
-        android:textColor="#028ce5"
-        android:textSize="18sp"
+        android:textColor="#ffffff"
+        android:textSize="28sp"
         android:visibility="gone"/>
 </RelativeLayout>

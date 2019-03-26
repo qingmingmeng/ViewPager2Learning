@@ -9,8 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:background="#226699"
+        android:background="@mipmap/image_a"
         android:text="A"
-        android:textColor="#fff"
-        android:textSize="16sp"/>
+        android:textColor="#0000ff"
+        android:textSize="26sp"/>
 </LinearLayout>
