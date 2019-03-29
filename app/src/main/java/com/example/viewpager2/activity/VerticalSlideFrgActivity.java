@@ -64,7 +64,7 @@ public class VerticalSlideFrgActivity extends AppCompatActivity {
             }
         });
 
-        setColor(0);//默认选中第一个tag项
+        setColor(0);//默认选中第一个tab项
 
         viewPager2 = findViewById(R.id.view_pager_2);
         FragmentManager manager = getSupportFragmentManager();

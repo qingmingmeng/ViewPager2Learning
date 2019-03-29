@@ -52,10 +52,10 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter implements View.OnCl
         MyHolder hd = (MyHolder) holder;
         hd.itemView.setTag(position);
         hd.imageView.setImageResource(datas.get(position));
-        if (position == 0){
+        /*if (position == 0){
             hd.tvGuide.setVisibility(View.VISIBLE);
             hd.tvGuide.startAnimation(animation);
-        }
+        }*/
     }
 
     @Override
