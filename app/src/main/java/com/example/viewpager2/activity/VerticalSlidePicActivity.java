@@ -69,6 +69,8 @@ public class VerticalSlidePicActivity extends Activity {
             @Override
             public void onPageScrollStateChanged(int state) {
                 super.onPageScrollStateChanged(state);
+                // ViewPager.SCROLL_STATE_IDLE 标识的状态是当前页面完全展现，并且没有动画正在进行中，如果不
+                // 是此状态下执行 setCurrentItem 方法回在首位替换的时候会出现跳动！
                 if (state != ViewPager.SCROLL_STATE_IDLE) return;
                 if (currentPisition == 0) {
                     viewPager2.setCurrentItem(datas.size() - 2, false);
