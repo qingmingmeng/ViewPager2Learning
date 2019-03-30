@@ -11,6 +11,7 @@ import com.example.viewpager2.R;
 public class MainActivity extends Activity {
 
     private Button btVertialPic;
+    private Button btHorizontalPic;
     private Button btVerticalFragment;
 
     @Override
@@ -22,7 +23,19 @@ public class MainActivity extends Activity {
         btVertialPic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, VerticalSlidePicActivity.class));
+                Intent intent = new Intent(MainActivity.this, VerticalSlidePicActivity.class);
+                intent.putExtra(VerticalSlidePicActivity.TYPE,VerticalSlidePicActivity.VERTICAL);
+                startActivity(intent);
+            }
+        });
+
+        btHorizontalPic = findViewById(R.id.bt_horizontal_pic);
+        btHorizontalPic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, VerticalSlidePicActivity.class);
+                intent.putExtra(VerticalSlidePicActivity.TYPE,VerticalSlidePicActivity.HORIZONTAL);
+                startActivity(intent);
             }
         });
 
