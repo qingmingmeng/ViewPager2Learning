@@ -8,14 +8,4 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"/>
-
-    <TextView
-        android:id="@+id/tv_guide"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="请向上滑动"
-        android:textColor="#ffffff"
-        android:textSize="28sp"
-        android:visibility="gone"/>
 </RelativeLayout>

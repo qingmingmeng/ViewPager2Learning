@@ -29,7 +29,6 @@ public class VerticalSlidePicActivity extends Activity {
     public static int HORIZONTAL = 0x1002;
 
     private int type;
-    private AlphaAnimation alphaAnimation;
     private List<Integer> images = new ArrayList<>();
     private ViewPager2 viewPager2;
     private LinearLayout llIndicator;
@@ -41,11 +40,6 @@ public class VerticalSlidePicActivity extends Activity {
         setContentView(R.layout.activity_vertical_slide);
 
         llIndicator = findViewById(R.id.ll_indicator);
-
-        alphaAnimation = new AlphaAnimation(1, 0);
-        alphaAnimation.setDuration(1000);
-        alphaAnimation.setRepeatCount(Animation.INFINITE);
-        alphaAnimation.setRepeatMode(Animation.REVERSE);
 
         //获取数据传输
         Intent intent = getIntent();
@@ -81,7 +75,7 @@ public class VerticalSlidePicActivity extends Activity {
         }
 
         viewPager2 = findViewById(R.id.view_pager_2);
-        MyRecyclerAdapter myAdapter = new MyRecyclerAdapter(datas,R.layout.item,this,alphaAnimation);
+        MyRecyclerAdapter myAdapter = new MyRecyclerAdapter(datas,R.layout.item,this);
         viewPager2.setAdapter(myAdapter);
         viewPager2.setCurrentItem(1,false);
         if (type == VERTICAL) {

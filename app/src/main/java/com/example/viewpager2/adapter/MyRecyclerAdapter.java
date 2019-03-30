@@ -28,13 +28,11 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter implements View.OnCl
     private List<Integer> datas;
     private int viewId;
     private Context context;
-    private Animation animation;
 
-    public MyRecyclerAdapter(List<Integer> datas, int viewId, Context context, Animation animation){
+    public MyRecyclerAdapter(List<Integer> datas, int viewId, Context context){
         this.datas = datas;
         this.viewId = viewId;
         this.context = context;
-        this.animation = animation;
     }
 
     @NonNull
@@ -52,10 +50,6 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter implements View.OnCl
         MyHolder hd = (MyHolder) holder;
         hd.itemView.setTag(position);
         hd.imageView.setImageResource(datas.get(position));
-        /*if (position == 0){
-            hd.tvGuide.setVisibility(View.VISIBLE);
-            hd.tvGuide.startAnimation(animation);
-        }*/
     }
 
     @Override
@@ -72,11 +66,9 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter implements View.OnCl
 
     private static final class MyHolder extends RecyclerView.ViewHolder{
         private final ImageView imageView;
-        private final TextView tvGuide;
         public MyHolder(@NonNull View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.image_view);
-            tvGuide = itemView.findViewById(R.id.tv_guide);
         }
     }
 
