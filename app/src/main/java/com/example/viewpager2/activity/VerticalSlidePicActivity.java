@@ -1,8 +1,11 @@
 package com.example.viewpager2.activity;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +37,19 @@ public class VerticalSlidePicActivity extends Activity {
     private LinearLayout llIndicator;
     private List<View> indicatorViews = new ArrayList<>();
 
+    @SuppressLint("HandlerLeak")
+    private Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            if (null != viewPager2) {
+                viewPager2.setCurrentItem((viewPager2.getCurrentItem() % (images.size() + 2)) + 1,true);
+            }
+            handler.sendEmptyMessageDelayed(0,2000);
+            super.handleMessage(msg);
+        }
+    };
+
+    @SuppressLint("NewApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -126,6 +142,7 @@ public class VerticalSlidePicActivity extends Activity {
                 }
             }
         });
+        handler.sendEmptyMessageDelayed(0,2000);//开始轮播
     }
 
     //设置指示器颜色
