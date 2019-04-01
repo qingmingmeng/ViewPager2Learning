@@ -155,4 +155,12 @@ public class VerticalSlidePicActivity extends Activity {
             }
         }
     }
+
+    @Override
+    protected void onDestroy() {
+        if (null != handler) {
+            handler.removeCallbacksAndMessages(null);//回收handler，null表示所有的callback和message都会被回收
+        }
+        super.onDestroy();
+    }
 }
