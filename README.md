@@ -1,3 +1,5 @@
+[![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu)
+
 # ViewPager2Learning
 google新推出的ViewPager2，研究学习一下它的特性和用法
 
