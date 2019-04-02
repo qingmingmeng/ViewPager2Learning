@@ -22,3 +22,5 @@ google新推出的ViewPager2，研究学习一下它的特性和用法
 6、跳转到特定fragment页面时可以用：public void setCurrentItem(int item, boolean smoothScroll)，该方法第二个参数设为true时，会有平缓滑动的效果，设为false时，则不会有滑动效果。（注意：假设有三个fragment A,B,C，B位于A与C之间，如果当前正在展示A，通过setCurrentItem方法直接跳到C，如果smoothScroll=true，则必会先执行B的生命周期，然后执行C的生命周期，如果smoothScroll=false，则会直接执行C的生命周期）
 
 7、注意：本例中Fragment的包路径为：androidx.fragment.app.Fragment
+
+8、注意：目前无法控制图片切换速度，适用于viewpager的反射获取scroller的方法无法适用到viewpager2，需要研究心得方法
