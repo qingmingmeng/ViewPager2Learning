@@ -13,12 +13,12 @@ import com.example.viewpager2.fragment.CFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager2.widget.ViewPager2;
 
-public class VerticalSlideFrgActivity extends AppCompatActivity {
+public class VerticalSlideFrgActivity extends FragmentActivity {
 
     private ViewPager2 viewPager2;
     private MyFragmentStateAdapter myFragmentStateAdapter;

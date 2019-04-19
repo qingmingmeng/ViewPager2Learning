@@ -143,6 +143,8 @@ public class VerticalSlidePicActivity extends Activity {
             }
         });
         handler.sendEmptyMessageDelayed(0,2000);//开始轮播
+
+        // TODO: 2019/4/1 无法通过反射获取Scroller，进而设置图片切换速度，需要研究
     }
 
     //设置指示器颜色
