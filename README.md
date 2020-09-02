@@ -23,4 +23,4 @@ google新推出的ViewPager2，研究学习一下它的特性和用法
 
 7、注意：本例中Fragment的包路径为：androidx.fragment.app.Fragment
 
-8、注意：目前无法控制图片切换速度，适用于viewpager的反射获取scroller的方法无法适用到viewpager2，需要研究心得方法
+8、注意：目前无法控制图片切换速度，适用于viewpager的反射获取scroller的方法无法适用到viewpager2，需要研究新的方法
